@@ -6,7 +6,7 @@ A java developer can define various stages of a program in different java classe
 ThreadOS hides complexity of thread allocation and scheduling from the developer and makes it very easy to a multi-threaded program in java.
 
 ## Example driver code -
-'''
+''' Code
 		ThreadedApplication myapp = new ThreadedApplication(4); /* create thread pool of size 4. */
 		
 		ThreadAppStage stage1 = new FileReaderThread2(1, 2);    /* Stage1 with stageId 1 and needs to run using 2 threads. */
@@ -21,7 +21,6 @@ ThreadOS hides complexity of thread allocation and scheduling from the developer
 		myapp.start();
 		myapp.awaitTermination();
     
-'''
 
 ## Examples
 Examples are present in com.techvrix.threados.example package.
