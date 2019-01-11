@@ -23,32 +23,32 @@ ThreadOS hides complexity of thread allocation and scheduling from the developer
 		
 ## Example Stage Code -
 
-        class WordCountThread extends ThreadAppStage<Map<String, Integer>> {
+	class WordCountThread extends ThreadAppStage<Map<String, Integer>> {
 	
-	public WordCountThread(Integer stageId, Integer nParallel) {
-		super(stageId, nParallel);
-	}
-
-	public void execute() {
-		StageIOSystem<String> inSystem = (StageIOSystem<String>) getIohandle().getInputSystem(getStageId());
-		StageIOSystem<Map<String, Integer>> outSystem = (StageIOSystem<Map<String, Integer>>) getIohandle().getOutputSystem(getStageId());
-		
-		Map<String, Integer> countMap = new HashMap<String, Integer>();
-		while (inSystem.hasMoreInput()) {
-			String word = inSystem.read();
-			if (word != null) {
-				Integer count = countMap.get(word);
-				if (count == null)
-					countMap.put(word, 1);
-				else
-					countMap.put(word, count+1);
-			}
+		public WordCountThread(Integer stageId, Integer nParallel) {
+			super(stageId, nParallel);
 		}
-		outSystem.add(countMap);
-		outSystem.setDone();	 
-	}
 
-}
+		public void execute() {
+			StageIOSystem<String> inSystem = (StageIOSystem<String>) getIohandle().getInputSystem(getStageId());
+			StageIOSystem<Map<String, Integer>> outSystem = (StageIOSystem<Map<String, Integer>>) getIohandle().getOutputSystem(getStageId());
+
+			Map<String, Integer> countMap = new HashMap<String, Integer>();
+			while (inSystem.hasMoreInput()) {
+				String word = inSystem.read();
+				if (word != null) {
+					Integer count = countMap.get(word);
+					if (count == null)
+						countMap.put(word, 1);
+					else
+						countMap.put(word, count+1);
+				}
+			}
+			outSystem.add(countMap);
+			outSystem.setDone();	 
+		}
+
+	}
     
 
 ## Examples
