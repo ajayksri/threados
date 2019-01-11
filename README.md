@@ -7,6 +7,7 @@ ThreadOS hides complexity of thread allocation and scheduling from the developer
 
 ## Example driver code -
 ''' Code
+
 		ThreadedApplication myapp = new ThreadedApplication(4); /* create thread pool of size 4. */
 		
 		ThreadAppStage stage1 = new FileReaderThread2(1, 2);    /* Stage1 with stageId 1 and needs to run using 2 threads. */
