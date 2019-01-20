@@ -5,8 +5,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.BlockingQueue;
 
 public class StageIOSystem<T> {
-	volatile Integer numProducerThreads;
-	BlockingQueue<T> inputQ;
+	private volatile Integer numProducerThreads;
+	private BlockingQueue<T> inputQ;
 	
 	public StageIOSystem(Integer nParallel) {
 		numProducerThreads = nParallel;

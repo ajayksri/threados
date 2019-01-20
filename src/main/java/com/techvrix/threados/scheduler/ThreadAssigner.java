@@ -13,10 +13,10 @@ import com.techvrix.threados.stage.ThreadedAppStage;
 import com.techvrix.threados.io.StageIOSystem;
 
 public class ThreadAssigner {
-	StageIOSystem<ThreadedAppStage> threadQueue;
-	ExecutorService executor;
-	List<Future<Boolean>> resList;
-	Integer numThreads;
+	private StageIOSystem<ThreadedAppStage> threadQueue;
+	private ExecutorService executor;
+	private List<Future<Boolean>> resList;
+	private Integer numThreads;
 	
 	public ThreadAssigner(Integer numThreads) {
 		this.numThreads = numThreads;

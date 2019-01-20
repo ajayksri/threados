@@ -12,10 +12,10 @@ import com.techvrix.threados.scheduler.ThreadAssigner;
 
 public class ThreadedApplication implements IOHandle {
 	
-	Integer numThreads;
-	Map<Integer, ThreadedAppStage> stages; /* Change this to sorted list. */
-	Map<Integer, StageIOHandle> stageIOs;
-	ThreadAssigner threadAssigner;
+	private Integer numThreads;
+	private Map<Integer, ThreadedAppStage> stages; /* Change this to sorted list. */
+	private Map<Integer, StageIOHandle> stageIOs;
+	private ThreadAssigner threadAssigner;
 	
 	public ThreadedApplication(Integer numThreads) {
 		
